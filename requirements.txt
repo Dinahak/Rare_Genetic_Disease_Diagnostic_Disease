@@ -1,0 +1,10 @@
+langgraph
+langchain-ollama
+pydantic
+fastapi
+uvicorn
+python-dotenv
+pandas
+sci-kit learn 
+sentence-transformers
+chromadb
