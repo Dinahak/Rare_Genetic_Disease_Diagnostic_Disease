@@ -1,0 +1,43 @@
+[
+  {
+    "case_id": "TC001",
+    "age": 44,
+    "sex": "F",
+    "raw_input": "4-month history of persistent fatigue, unexplained weight gain of 6kg, feeling cold even in warm rooms, constipation, and low mood. Hair has become noticeably thin and dry.",
+    "pmh": [],
+    "medications": [],
+    "vitals": {"hr": 56, "bp": "108/70", "temp": 36.1},
+    "social": "Primary school teacher, non-smoker, BMI 27",
+    "expected_diagnosis": "Primary hypothyroidism",
+    "expected_tests": ["TSH", "Free T4", "FBC", "Lipid profile"],
+    "difficulty": "straightforward"
+  },
+  {
+    "case_id": "TC002",
+    "age": 61,
+    "sex": "M",
+    "raw_input": "6-week history of excessive thirst, passing urine frequently including twice at night, blurred vision, and unintentional weight loss of 5kg. Tingling in both feet and fatigue after meals.",
+    "pmh": ["Hypertension", "Hypercholesterolaemia"],
+    "medications": ["Amlodipine 5mg OD", "Atorvastatin 20mg ON"],
+    "vitals": {"hr": 88, "bp": "148/92", "rbg": 18.4},
+    "social": "Retired driver, ex-smoker 20 pack-years, BMI 33",
+    "expected_diagnosis": "Type 2 Diabetes Mellitus",
+    "expected_tests": ["HbA1c", "Fasting glucose", "eGFR", "Urine ACR"],
+    "difficulty": "red_flag",
+    "red_flags": ["RBG 18.4 mmol/L", "blurred vision", "peripheral neuropathy symptoms"]
+  },
+  {
+    "case_id": "TC003",
+    "age": 34,
+    "sex": "F",
+    "raw_input": "3-month history of fatigue, shortness of breath climbing stairs, palpitations, frequent headaches, and lightheadedness on standing. Heavy prolonged periods lasting 8-9 days for 5 months. Vegan diet for 2 years. Pallor noted on conjunctival exam.",
+    "pmh": [],
+    "medications": ["Microgynon OCP"],
+    "vitals": {"hr": 102, "bp": "100/65"},
+    "social": "Software developer, vegan, non-smoker, BMI 21",
+    "expected_diagnosis": "Iron deficiency anaemia",
+    "differential_2": "Vitamin B12 deficiency",
+    "expected_tests": ["FBC", "Ferritin", "B12", "Folate", "Iron studies", "TFTs"],
+    "difficulty": "ambiguous"
+  }
+]
