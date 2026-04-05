@@ -130,24 +130,27 @@ class ReasoningAgent:
     def _build_query(self, case: PatientCase) -> str:
         """
         Build a search query from the patient case.
-        Combines symptoms, age, sex and history.
+        Weights active symptoms more heavily than history.
         """
         parts = []
 
-        symptom_terms = [
+        # active symptoms only — negated ones excluded
+        active_symptoms = [
             s.hpo_term for s in case.symptoms
             if s.hpo_term and not s.is_negated
         ]
-        if symptom_terms:
-            parts.append(", ".join(symptom_terms))
+        if active_symptoms:
+            # repeat symptoms to weight them higher in vector search
+            parts.append(", ".join(active_symptoms))
+            parts.append(", ".join(active_symptoms))
 
         if case.pmh:
-            parts.append("History of: " + ", ".join(case.pmh))
+            parts.append("History: " + ", ".join(case.pmh))
 
         if case.medications:
             parts.append("Medications: " + ", ".join(case.medications))
 
-        parts.append(f"Patient: {case.age}yo {case.sex}")
+        parts.append(f"{case.age}yo {case.sex}")
 
         return ". ".join(parts)
 
